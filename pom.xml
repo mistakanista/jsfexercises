@@ -15,54 +15,17 @@
   </properties>
 
   <dependencies>
-    
     <dependency>
-      <groupId>org.eclipse.persistence</groupId>
-      <artifactId>eclipselink</artifactId>
-      <version>4.0.3</version>
-    </dependency>
-  
-    <!-- Misc -->
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>8.0.1</version>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>10.0.0</version>  <!-- or 9.1.0 for Jakarta EE 9 -->
       <scope>provided</scope>
     </dependency>
-    
-    <!-- JUnit Jupiter API for writing tests -->
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.11.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- JUnit Jupiter Engine for running tests -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.11.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Mockito for mocking in tests -->
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>5.12.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Mockito extension for JUnit Jupiter -->
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-junit-jupiter</artifactId>
-      <version>5.12.0</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.primefaces</groupId>
-      <artifactId>primefaces</artifactId>
-      <version>14.0.0</version>
+      <groupId>jakarta.faces</groupId>
+      <artifactId>jakarta.faces-api</artifactId>
+      <version>3.0.0</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
@@ -71,7 +34,7 @@
       <plugin>
         <groupId>io.openliberty.tools</groupId>
         <artifactId>liberty-maven-plugin</artifactId>
-        <version>3.10.1</version>
+        <version>3.11.2</version>
         <configuration>
           <runtimeArtifact>
             <groupId>com.ibm.websphere.appserver.runtime</groupId>
@@ -117,6 +80,15 @@
           <includes>
             <include>**/*Test.java</include>
           </includes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>  <!-- Ensure it's at least 3.8.1 -->
+        <configuration>
+          <source>17</source>
+          <target>17</target>
         </configuration>
       </plugin>
     </plugins>
