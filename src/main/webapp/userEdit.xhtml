@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"> <head>
+  <title>Benutzerdaten ändern</title>
+</head>
+<body>
+<f:view> <h:form> <table>
+  <tr>
+    <td>Vorname:</td>
+    <td><h:inputText id="vorname" value="#{userController.user.vorname}" /></td>
+  </tr> <tr>
+  <td>Nachname:</td>
+  <td><h:inputText id="nachname" value="#{userController.user.nachname}"/></td> </tr>
+  <tr>
+    <td colspan="2"><h:commandButton value="Speichern" action="#{userController.speichereUser}" /></td>
+  </tr> </table> </h:form> </f:view> </body> </html>
