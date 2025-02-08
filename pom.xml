@@ -6,7 +6,7 @@
   
   <groupId>org.qwics.jsf</groupId>
   <artifactId>jsf-uebung</artifactId>
-  <version>0.9</version>
+  <version>1.0</version>
   <packaging>war</packaging>
 
   <properties>
@@ -64,12 +64,26 @@
       <artifactId>primefaces</artifactId>
       <version>14.0.0</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.36</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derbyclient</artifactId>
+      <version>10.16.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derbytools</artifactId>
+      <version>10.16.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derbyshared</artifactId>
+      <version>10.16.1.1</version>
     </dependency>
 
   </dependencies>
