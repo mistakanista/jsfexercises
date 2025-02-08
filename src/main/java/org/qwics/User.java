@@ -7,6 +7,7 @@ public class User implements Serializable {
 
   private String vorname;
   private String nachname;
+  private String address;
 
   public String getVorname() {
     return vorname;
@@ -22,5 +23,13 @@ public class User implements Serializable {
 
   public void setNachname(String nachname) {
     this.nachname = nachname;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
   }
 }

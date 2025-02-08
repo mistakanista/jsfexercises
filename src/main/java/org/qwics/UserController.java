@@ -20,5 +20,6 @@ public class UserController implements Serializable {
   public String speichereUser() {
     System.out.println("Vorname: "+user.getVorname());
     System.out.println("Nachname: "+user.getNachname());
+    System.out.println("Address: "+user.getAddress());
     return "userAnzeigen";
   } }
