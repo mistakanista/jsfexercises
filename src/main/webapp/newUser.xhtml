@@ -7,10 +7,6 @@
 <body>
 <f:view> <h:form> <table>
   <tr>
-    <td>ID:</td>
-    <td>#{userController.user.id}</td>
-  </tr>
-  <tr>
     <td>Vorname:</td>
     <td><h:inputText id="vorname" value="#{userController.user.vorname}" /></td>
   </tr> <tr>
@@ -20,5 +16,5 @@
   <td>Adresse:</td>
   <td><h:inputText id="address" value="#{userController.user.address}"/></td> </tr>
   <tr>
-    <td colspan="2"><h:commandButton value="Aktualisieren" action="#{userController.updateUser}" /></td>
+    <td colspan="2"><h:commandButton value="Speichern" action="#{userController.speichereUser}" /></td>
   </tr> </table> </h:form> </f:view> </body> </html>

@@ -18,7 +18,6 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
 
@@ -26,6 +25,6 @@
 		<exception-type>
 			javax.faces.application.ViewExpiredException
 		</exception-type>
-		<location>/index.html</location>
+		<location>/index.xhtml</location>
 	</error-page>
 </web-app>

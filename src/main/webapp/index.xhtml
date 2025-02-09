@@ -6,7 +6,12 @@
   <title>User List</title>
 </h:head>
 <h:body>
-  <h2>User List</h2>
+  <h2>User Übersicht</h2>
+  <div style="margin-bottom:10px">
+    <h:form>
+      <h:commandLink value="Neuen User anlegen" action="#{userController.newUser}" />
+    </h:form>
+  </div>
   <h:dataTable value="#{userController.users}" var="user" border="1">
     <h:column>
       <f:facet name="header">ID</f:facet>
@@ -23,6 +28,18 @@
     <h:column>
       <f:facet name="header">Adresse</f:facet>
       #{user.address}
+    </h:column>
+    <h:column>
+      <f:facet name="header">User entfernen</f:facet>
+      <h:form>
+        <h:commandButton value="Löschen" action="#{userController.deleteUser(user)}" />
+      </h:form>
+    </h:column>
+    <h:column>
+      <f:facet name="header">User bearbeiten</f:facet>
+      <h:form>
+        <h:commandButton value="Edit" action="#{userController.editUser(user)}" />
+      </h:form>
     </h:column>
   </h:dataTable>
 </h:body>
