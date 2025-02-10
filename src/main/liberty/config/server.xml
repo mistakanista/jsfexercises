@@ -18,7 +18,7 @@
   <variable name="derby.port" defaultValue="1527" />
   <variable name="derby.databaseName" defaultValue="uebung" />
   <variable name="derby.user" defaultValue="APP" />
-  <variable name="derby.password" defaultValue="APP" />
+  <variable name="derby.password" defaultValue="${env.DERBY_PW}" />
 
   <!-- HTTP -->
   <httpEndpoint id="defaultHttpEndpoint" host="${http.host}" httpPort="${http.port}"

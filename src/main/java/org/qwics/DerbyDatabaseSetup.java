@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class DerbyDatabaseSetup {
   public static void main(String[] args) {
     String url = "jdbc:derby://localhost:1527/uebung;create=true"; // Auto-create DB
     String user = "APP";
-    String password = "APP";
+    String password = System.getenv("DERBY_PW");
 
     try {
       // Register the Derby driver explicitly
@@ -19,22 +21,20 @@ public class DerbyDatabaseSetup {
           Statement stmt = conn.createStatement()) {
 
         // Create table if not exists
-        String createTableSQL = "CREATE TABLE UEBUNG ("
+        String createTableSQL = "CREATE TABLE USERS ("
             + "ID INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, "
             + "VORNAME VARCHAR(255) NOT NULL, "
             + "NACHNAME VARCHAR(255) NOT NULL, "
             + "ADDRESS VARCHAR(255) NOT NULL"
             + ")";
         stmt.executeUpdate(createTableSQL);
-
-        System.out.println("Table UEBUNG created successfully!");
+        log.info("Table USERS created successfully!");
       }
 
     } catch (ClassNotFoundException e) {
-      System.err.println("Unable to load the Derby driver. Make sure derbyclient.jar is in the classpath.");
-      e.printStackTrace();
+      log.error("Unable to load the Derby driver. Make sure derbyclient.jar is in the classpath. {}", e.getMessage());
     } catch (SQLException e) {
-      e.printStackTrace();
+      log.error("SQL Exception {}", e.getMessage());
     }
   }
 
