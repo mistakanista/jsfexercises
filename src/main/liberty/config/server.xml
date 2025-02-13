@@ -8,7 +8,20 @@
     <feature>localConnector-1.0</feature>
     <feature>servlet-4.0</feature>
     <feature>el-3.0</feature>
+    <feature>appSecurity-3.0</feature>
   </featureManager>
+  
+  <basicRegistry id="basic" realm="customRealm">
+    <user name="egon" password="1234"></user>
+    <user name="susi" password="1235"></user>
+    <group name="employee">
+      <member name="egon"></member>
+      <member name="susi"></member>
+    </group>
+    <group name="admin">
+      <member name="susi"></member>
+    </group>
+  </basicRegistry>
 
   <variable name="http.enabled" defaultValue="true" />
   <variable name="http.host" defaultValue="*" />
@@ -37,5 +50,14 @@
     javax.sql.XADataSource="org.apache.derby.jdbc.ClientXADataSource" />
   <library id="jdbcLib" filesetRef="jdbcFileset" />
   <fileset id="jdbcFileset" dir="${server.config.dir}/lib/jdbc" includes="*.jar" />
-
+  <webApplication location="jsf-uebung-1.0.war">
+    <application-bnd>
+      <security-role name="admin">
+        <user name="susi"></user>
+      </security-role>
+      <security-role name="employee">
+        <special-subject type="EVERYONE"></special-subject>
+      </security-role>
+    </application-bnd>
+  </webApplication>
 </server>

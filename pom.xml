@@ -108,6 +108,19 @@
         </configuration>
       </plugin>
       <plugin>
+        <executions>
+          <execution>
+            <id>install-apps</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+            <configuration>
+              <appsDirectory>apps</appsDirectory>
+              <installAppPackages>project</installAppPackages>
+            </configuration>
+          </execution>
+        </executions>
         <groupId>io.openliberty.tools</groupId>
         <artifactId>liberty-maven-plugin</artifactId>
         <version>3.10.1</version>

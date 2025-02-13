@@ -21,6 +21,16 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController implements Serializable {
   private User user;
 
+  private int userNr;
+
+  public int getUserNr() {
+    return userNr;
+  }
+
+  public void setUserNr(int userNr) {
+    this.userNr = userNr;
+  }
+
   @Resource(lookup = "jdbc/DerbyDS")
   private DataSource dataSource;
 
