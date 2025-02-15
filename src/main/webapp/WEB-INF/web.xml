@@ -18,7 +18,7 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>intern/users.xhtml</welcome-file>
 	</welcome-file-list>
 	<context-param>
 		<param-name>primefaces.Theme</param-name>
@@ -36,8 +36,7 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Geschuetzer Bereich</web-resource-name>
-			<url-pattern>/userEdit.xhtml</url-pattern>
-			<url-pattern>/userAnzeigen.xhtml</url-pattern>
+			<url-pattern>/intern/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>admin</role-name>
