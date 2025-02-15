@@ -36,8 +36,8 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Geschuetzer Bereich</web-resource-name>
-			<url-pattern>/userEdit.jsf</url-pattern>
-			<url-pattern>/userAnzeigen.jsf</url-pattern>
+			<url-pattern>/userEdit.xhtml</url-pattern>
+			<url-pattern>/userAnzeigen.xhtml</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>admin</role-name>
@@ -47,8 +47,8 @@
 		<auth-method>FORM</auth-method>
 		<realm-name>file</realm-name>
 		<form-login-config>
-			<form-login-page>/login.jsf</form-login-page>
-			<form-error-page>/error.jsf</form-error-page>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/error.html</form-error-page>
 		</form-login-config>
 	</login-config>
 </web-app>
