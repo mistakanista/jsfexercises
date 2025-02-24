@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:metadata>
+  <f:viewParam name="userNr" value="#{userController.userNr}"/>
+</f:metadata>
+ <h:head>
+  <title>Benutzerdaten ändern</title>
+
+</h:head>
+<h:body>
+<f:view>
+
+  ${userController.userNr}
+  <h:form> <table>
+  <tr>
+    <td>ID:</td>
+    <td>#{userController.user.id}</td>
+  </tr>
+  <tr>
+    <td>Vorname:</td>
+    <td><h:inputText id="vorname" value="#{userController.user.vorname}" /></td>
+  </tr> <tr>
+  <td>Nachname:</td>
+  <td><h:inputText id="nachname" value="#{userController.user.nachname}"/></td> </tr>
+  <tr>
+  <td>Adresse:</td>
+  <td><h:inputText id="address" value="#{userController.user.address}"/></td> </tr>
+  <tr>
+    <td colspan="2"><p:commandButton value="Aktualisieren" action="#{userController.updateUser}" /></td>
+  </tr> </table> </h:form>
+  <p:spinner />
+
+</f:view>
+</h:body> </html>
