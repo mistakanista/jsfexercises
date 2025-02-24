@@ -62,3 +62,7 @@ out/
 
 ### kotlin error files ###
 ./.kotlin/**
+/target/
+
+### Eclipse ###
+.metadata/

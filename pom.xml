@@ -70,7 +70,6 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.36</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.derby</groupId>
@@ -105,10 +104,24 @@
         <configuration>
           <source>21</source>  <!-- Change to match your Java version -->
           <target>21</target>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.36</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>
         <executions>
+          <execution>
+            <id>install-liberty</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>install-server</goal>
+            </goals>
+          </execution>
           <execution>
             <id>install-apps</id>
             <phase>pre-integration-test</phase>
