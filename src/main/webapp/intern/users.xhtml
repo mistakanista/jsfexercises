@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">>
 <h:head>
   <title>User List</title>
 </h:head>
@@ -12,35 +13,42 @@
       <h:commandLink value="Neuen User anlegen" action="#{userController.newUser}" />
     </h:form>
   </div>
-  <h:dataTable value="#{userController.users}" var="user" border="1">
-    <h:column>
+  <p:dataTable value="#{userController.users}"
+               var="user"
+               border="1"
+               selection="#{userController.selectedUsers}"
+               selectionMode="multiple"
+               rowKey="#{user.id}"
+               rowSelectMode="add">
+    <p:column selectionMode="multiple" />
+    <p:column>
       <f:facet name="header">ID</f:facet>
       #{user.id}
-    </h:column>
-    <h:column>
+    </p:column>
+    <p:column>
       <f:facet name="header">Vorname</f:facet>
       #{user.vorname}
-    </h:column>
-    <h:column>
+    </p:column>
+    <p:column>
       <f:facet name="header">Nachname</f:facet>
       #{user.nachname}
-    </h:column>
-    <h:column>
+    </p:column>
+    <p:column>
       <f:facet name="header">Adresse</f:facet>
       #{user.address}
-    </h:column>
-    <h:column>
+    </p:column>
+    <p:column>
       <f:facet name="header">User entfernen</f:facet>
       <h:form>
         <h:commandButton value="Löschen" action="#{userController.deleteUser(user)}" />
       </h:form>
-    </h:column>
-    <h:column>
+    </p:column>
+    <p:column>
       <f:facet name="header">User bearbeiten</f:facet>
       <h:form>
         <h:commandButton value="Edit" action="#{userController.editUser(user)}" />
       </h:form>
-    </h:column>
-  </h:dataTable>
+    </p:column>
+  </p:dataTable>
 </h:body>
 </html>

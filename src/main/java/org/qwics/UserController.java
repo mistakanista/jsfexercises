@@ -39,6 +39,7 @@ public class UserController implements Serializable {
   }
 
   private List<User> users;
+  private List<User> selectedUsers;
 
   @PostConstruct
   public void init() {
