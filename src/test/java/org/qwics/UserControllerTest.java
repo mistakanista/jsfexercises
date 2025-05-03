@@ -1,10 +1,10 @@
+package org.qwics;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.qwics.User;
-import org.qwics.UserController;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
