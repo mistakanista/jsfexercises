@@ -51,4 +51,23 @@ class IbanCheckerTest {
         assertFalse(result.isValid());
         assertEquals("Ungültige IBAN-Länge", result.getReason());
     }
+    
+    @Test
+	void testValidateIban_InvalidCharacters() {
+	    String invalidIban = "DE89-3704-0044-0532/0130-00"; // IBAN with dashes
+	    IbanChecker.IbanValidationResult result = ibanChecker.validateIban(invalidIban);
+	
+	    assertFalse(result.isValid());
+	    assertEquals("IBAN-Prüfziffer ist ungültig", result.getReason());
+	}
+    
+    @Test
+	void testValidateIban_EmptyIban() {
+		String emptyIban = ""; // Leere IBAN
+		IbanChecker.IbanValidationResult result = ibanChecker.validateIban(emptyIban);
+
+		assertFalse(result.isValid());
+		assertEquals("Ungültige IBAN-Länge", result.getReason());
+	}
+
 }
